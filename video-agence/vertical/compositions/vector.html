@@ -1,0 +1,66 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #ve-bg { position: absolute; inset: 0; background: #E6E8EC; }
+    #ve-board { position: absolute; left: 180.0px; top: 790.0px; width: 720.0px; height: 912.0px;
+      background: #FFFFFF; box-shadow: 0 6px 18px rgba(20, 22, 27, 0.12); }
+    #ve-cam { position: absolute; inset: 0; transform-origin: 540px 1150px; }
+    .ve-logo { position: absolute; left: 240.0px; top: 850.0px; width: 600.0px; height: 600.0px; }
+    .ve-h { position: absolute; width: 18px; height: 18px; background: #FFFFFF; border: 3px solid #2F80ED; }
+    #ve-name { position: absolute; left: 140px; top: 1466.0px; width: 800px; text-align: center;
+      font-family: "Playfair Display"; font-weight: 700; font-size: 90px; color: #4A2C1A; }
+    .ve-sw { position: absolute; width: 84px; height: 84px; border-radius: 50%; border: 5px solid #FFFFFF;
+      box-shadow: 0 3px 8px rgba(20, 22, 27, 0.18); }
+    #ve-cursor { position: absolute; left: 550px; top: 1690.0px; width: 115px; height: 115px; }
+    
+    .title {
+      position: absolute; left: 140px; top: 300px; width: 860px;
+      font-family: "Montserrat"; font-weight: 800; font-size: 96px; line-height: 1.04;
+      letter-spacing: -0.02em; color: #14161B;
+    }
+  </style>
+  <div id="root" data-composition-id="vector" data-width="1080" data-height="1920">
+    <div id="ve-bg"></div>
+    <div id="ve-cam">
+      <div id="ve-board" class="clip" data-start="0" data-duration="4"></div>
+      <div id="ve-sketch" class="ve-logo clip" data-start="0" data-duration="4"><svg viewBox="0 0 400 400" width="100%" height="100%"><circle class="vs-ring vs-line" cx="200" cy="200" r="180" pathLength="1" fill="none" stroke="#5B6270" stroke-width="5" stroke-dasharray="1 1"/><path class="vs-stem vs-line" d="M200 330 L200 120" pathLength="1" fill="none" stroke-linecap="round" stroke="#5B6270" stroke-width="5" stroke-dasharray="1 1"/><ellipse class="vs-grain vs-line" cx="170" cy="150" rx="20" ry="38" transform="rotate(-32 170 150)" pathLength="1" fill="none" stroke="#5B6270" stroke-width="5" stroke-dasharray="1 1"/><ellipse class="vs-grain vs-line" cx="230" cy="150" rx="20" ry="38" transform="rotate(32 230 150)" pathLength="1" fill="none" stroke="#5B6270" stroke-width="5" stroke-dasharray="1 1"/><ellipse class="vs-grain vs-line" cx="170" cy="200" rx="20" ry="38" transform="rotate(-32 170 200)" pathLength="1" fill="none" stroke="#5B6270" stroke-width="5" stroke-dasharray="1 1"/><ellipse class="vs-grain vs-line" cx="230" cy="200" rx="20" ry="38" transform="rotate(32 230 200)" pathLength="1" fill="none" stroke="#5B6270" stroke-width="5" stroke-dasharray="1 1"/><ellipse class="vs-grain vs-line" cx="170" cy="250" rx="20" ry="38" transform="rotate(-32 170 250)" pathLength="1" fill="none" stroke="#5B6270" stroke-width="5" stroke-dasharray="1 1"/><ellipse class="vs-grain vs-line" cx="230" cy="250" rx="20" ry="38" transform="rotate(32 230 250)" pathLength="1" fill="none" stroke="#5B6270" stroke-width="5" stroke-dasharray="1 1"/><ellipse class="vs-grain vs-line" cx="200" cy="100" rx="20" ry="38" transform="rotate(0 200 100)" pathLength="1" fill="none" stroke="#5B6270" stroke-width="5" stroke-dasharray="1 1"/></svg></div>
+      <div id="ve-color" class="ve-logo clip" data-start="0" data-duration="4"><svg viewBox="0 0 400 400" width="100%" height="100%"><circle class="vc-ring vc-line" cx="200" cy="200" r="180" pathLength="1" fill="#4A2C1A" stroke="#4A2C1A" stroke-width="8"/><path class="vc-stem vc-line" d="M200 330 L200 120" pathLength="1" fill="none" stroke-linecap="round" stroke="#E8A33D" stroke-width="10"/><ellipse class="vc-grain vc-line" cx="170" cy="150" rx="20" ry="38" transform="rotate(-32 170 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="vc-grain vc-line" cx="230" cy="150" rx="20" ry="38" transform="rotate(32 230 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="vc-grain vc-line" cx="170" cy="200" rx="20" ry="38" transform="rotate(-32 170 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="vc-grain vc-line" cx="230" cy="200" rx="20" ry="38" transform="rotate(32 230 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="vc-grain vc-line" cx="170" cy="250" rx="20" ry="38" transform="rotate(-32 170 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="vc-grain vc-line" cx="230" cy="250" rx="20" ry="38" transform="rotate(32 230 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="vc-grain vc-line" cx="200" cy="100" rx="20" ry="38" transform="rotate(0 200 100)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/></svg></div>
+      <div id="ve-handles" class="clip" data-start="0" data-duration="4">
+      <div class="ve-h" style="left:531.0px; top:871.0px"></div>
+      <div class="ve-h" style="left:801.0px; top:1141.0px"></div>
+      <div class="ve-h" style="left:531.0px; top:1411.0px"></div>
+      <div class="ve-h" style="left:261.0px; top:1141.0px"></div>
+      <div class="ve-h" style="left:531.0px; top:1021.0px"></div>
+      <div class="ve-h" style="left:531.0px; top:1336.0px"></div>
+      </div>
+      <div id="ve-name" class="clip" data-start="0" data-duration="4">Fournil Martin</div>
+      <div id="ve-swatches" class="clip" data-start="0" data-duration="4">
+      <div class="ve-sw" id="ve-sw-0" style="left:390px; top:1640.0px; background:#14161B"></div>
+      <div class="ve-sw" id="ve-sw-1" style="left:500px; top:1640.0px; background:#E8A33D"></div>
+      <div class="ve-sw" id="ve-sw-2" style="left:610px; top:1640.0px; background:#2E7D6B"></div>
+      </div>
+      <svg id="ve-cursor" class="clip" data-start="0" data-duration="4" viewBox="0 0 40 40">
+        <path d="M4 2 L4 32 L12 25 L18 38 L24 35 L18 22 L29 22 Z" fill="#14161B" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <h1 id="ve-title" class="title clip" data-start="0.4" data-duration="3.4">Qui devient<br />un vrai logo.</h1>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ve-cam", { scale: 1.12 }, { scale: 1, duration: 0.6, ease: "expo.out" }, 0);
+    tl.fromTo("#ve-board", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0.1);
+    tl.fromTo(".ve-h", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2)", stagger: 0.05 }, 0.35);
+    tl.fromTo("#ve-swatches .ve-sw", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2)", stagger: 0.06 }, 0.6);
+    tl.fromTo("#ve-title", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power3.out" }, 0.4);
+    tl.fromTo("#ve-cursor", { x: 378.0, y: 480.0 }, { x: 0, y: 0, duration: 0.7, ease: "power3.out" }, 0.75);
+    tl.fromTo("#ve-cursor", { scale: 1 }, { scale: 0.85, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.inOut" }, 1.5);
+    tl.fromTo("#ve-sw-1", { scale: 1 }, { scale: 1.18, duration: 0.12, yoyo: true, repeat: 1, ease: "power1.out" }, 1.52);
+    tl.fromTo("#ve-color", { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(75% at 50% 50%)", duration: 0.6, ease: "expo.out" }, 1.58);
+    tl.fromTo("#ve-handles", { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "power1.in" }, 2.0);
+    tl.fromTo("#ve-name", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "steps(14)" }, 2.1);
+    tl.to("#ve-cursor", { x: 324.0, y: 576.0, duration: 0.5, ease: "power2.in" }, 2.6);
+    tl.to("#ve-title", { x: -60, opacity: 0, duration: 0.3, ease: "power2.in" }, 3.4);
+    tl.to(["#ve-board", "#ve-swatches", "#ve-name"], { opacity: 0, duration: 0.3, ease: "power2.in" }, 3.5);
+    window.__timelines["vector"] = tl;
+  </script>
+</template>

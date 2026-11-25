@@ -1,0 +1,33 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #en-bg { position: absolute; inset: 0; background: #14161B; }
+    .en-l { position: absolute; left: 132px; font-family: "Montserrat"; font-weight: 900; font-size: 118px;
+      line-height: 1; letter-spacing: -0.04em; color: #F4F1EA; white-space: nowrap; }
+    #en-l1 { top: 620px; }
+    #en-l2 { top: 738.0px; color: #FF5A36; }
+    #en-kicker { position: absolute; left: 140px; top: 550px; font-family: "Montserrat"; font-weight: 700;
+      font-size: 34px; letter-spacing: 0.18em; text-transform: uppercase; color: #9AA3AE; }
+    #en-svc { position: absolute; left: 140px; top: 885.5px; width: 860px; font-family: "Montserrat"; font-weight: 600;
+      font-size: 40px; line-height: 1.35; color: #F4F1EA; }
+    #en-cta { position: absolute; left: 140px; top: 1035.5px; padding: 26px 40px; background: #FF5A36; color: #14161B;
+      font-family: "Montserrat"; font-weight: 800; font-size: 44px; }
+  </style>
+  <div id="root" data-composition-id="endcard" data-width="1080" data-height="1920" data-composition-variables='[{"id": "kicker", "type": "string", "label": "Nom de l’agence", "default": "Votre agence de communication"}, {"id": "cta", "type": "string", "label": "Appel à l’action", "default": "Parlons de votre projet"}]'>
+    <div id="en-bg"></div>
+    <p id="en-kicker" class="clip" data-start="0.9" data-duration="3.1" data-var-text="kicker">Votre agence de communication</p>
+    <div id="en-l1" class="en-l clip" data-start="0.1" data-duration="3.9">Votre marque,</div>
+    <div id="en-l2" class="en-l clip" data-start="0.35" data-duration="3.65">partout.</div>
+    <div id="en-svc" class="clip" data-start="1.2" data-duration="2.8">Graphisme · Marquage véhicule<br />Textile · Digital</div>
+    <div id="en-cta" class="clip" data-start="1.6" data-duration="2.4"><span data-var-text="cta">Parlons de votre projet</span> →</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#en-l1", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.45, ease: "expo.out" }, 0.1);
+    tl.fromTo("#en-l2", { clipPath: "inset(0 100% 0 0)", x: -30 }, { clipPath: "inset(0 0% 0 0)", x: 0, duration: 0.5, ease: "expo.out" }, 0.35);
+    tl.fromTo("#en-kicker", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0.9);
+    tl.fromTo("#en-svc", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.6, ease: "power2.inOut" }, 1.2);
+    tl.fromTo("#en-cta", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "expo.out", transformOrigin: "0% 50%" }, 1.6);
+    window.__timelines["endcard"] = tl;
+  </script>
+</template>

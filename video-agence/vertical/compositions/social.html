@@ -1,0 +1,72 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #so-bg { position: absolute; inset: 0; background: #12403C; }
+    #so-cam { position: absolute; inset: 0; transform-origin: 540.0px 854.7759999999998px; }
+    #so-phone { position: absolute; left: 310.4px; top: 526.0px; width: 459.2px; height: 908px;
+      background: #0B0C0F; border-radius: 56.056px; }
+    #so-screen { position: absolute; left: 324.4px; top: 540.0px; width: 431.2px; height: 880px; background: #FFFFFF;
+      border-radius: 43.120000000000005px; overflow: hidden; }
+    #so-head { position: absolute; left: 21.560000000000002px; top: 38.80800000000001px; height: 73.304px; display: flex; align-items: center; gap: 12.033488372093021px;
+      font-family: "Inter"; font-weight: 700; font-size: 24.066976744186043px; color: #14161B; }
+    #so-avatar { width: 58.64320000000001px; height: 58.64320000000001px; border-radius: 50%; background: #4A2C1A; padding: 5.86432px; }
+    #so-img { position: absolute; left: 345.96px; top: 660.7359999999999px; width: 388.08px; height: 388.08px; background: #F3D9A4; }
+    #so-img-logo { position: absolute; left: 77.616px; top: 54.3312px; width: 232.84799999999998px; height: 232.84799999999998px; }
+    #so-img-name { position: absolute; left: 0; top: 298.8216px; width: 388.08px; text-align: center;
+      font-family: "Playfair Display"; font-weight: 700; font-size: 34.9272px; color: #4A2C1A; }
+    #so-bar { position: absolute; left: 21.560000000000002px; top: 526.8662325581394px; display: flex; align-items: center; gap: 14.039069767441859px;
+      font-family: "Inter"; font-weight: 700; font-size: 30.083720930232555px; color: #14161B; font-variant-numeric: tabular-nums; }
+    #so-heart { width: 46.12837209302325px; height: 46.12837209302325px; }
+    #so-cap { position: absolute; left: 21.560000000000002px; top: 589.0392558139533px; width: 388.08px;
+      font-family: "Inter"; font-weight: 400; font-size: 22.06139534883721px; line-height: 1.35; color: #3A3E47; }
+    .so-bub { position: absolute; padding: 17.1px 26.599999999999998px; background: #FFFFFF; color: #14161B;
+      font-family: "Inter"; font-weight: 700; font-size: 38px; border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22); white-space: nowrap; }
+    
+    .title {
+      position: absolute; left: 140px; top: 300px; width: 860px;
+      font-family: "Montserrat"; font-weight: 800; font-size: 96px; line-height: 1.04;
+      letter-spacing: -0.02em; color: #FFFFFF;
+    }
+    #so-title { z-index: 10; }
+    #so-cam .so-bub { z-index: 5; }
+  </style>
+  <div id="root" data-composition-id="social" data-width="1080" data-height="1920">
+    <div id="so-bg"></div>
+    <div id="so-cam">
+      <div id="so-phone" class="clip" data-start="0" data-duration="4"></div>
+      <div id="so-screen" class="clip" data-start="0" data-duration="4">
+        <div id="so-head"><div id="so-avatar"><svg viewBox="0 0 400 400" width="100%" height="100%"><circle class="sa-ring sa-line" cx="200" cy="200" r="180" pathLength="1" fill="#4A2C1A" stroke="#4A2C1A" stroke-width="8"/><path class="sa-stem sa-line" d="M200 330 L200 120" pathLength="1" fill="none" stroke-linecap="round" stroke="#E8A33D" stroke-width="10"/><ellipse class="sa-grain sa-line" cx="170" cy="150" rx="20" ry="38" transform="rotate(-32 170 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="sa-grain sa-line" cx="230" cy="150" rx="20" ry="38" transform="rotate(32 230 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="sa-grain sa-line" cx="170" cy="200" rx="20" ry="38" transform="rotate(-32 170 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="sa-grain sa-line" cx="230" cy="200" rx="20" ry="38" transform="rotate(32 230 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="sa-grain sa-line" cx="170" cy="250" rx="20" ry="38" transform="rotate(-32 170 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="sa-grain sa-line" cx="230" cy="250" rx="20" ry="38" transform="rotate(32 230 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="sa-grain sa-line" cx="200" cy="100" rx="20" ry="38" transform="rotate(0 200 100)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/></svg></div>fournil.martin</div>
+        <div id="so-bar">
+          <svg id="so-heart" viewBox="0 0 24 24"><path id="so-heart-p" d="M12 21 L10.6 19.7 C5.4 15 2 11.9 2 8.1 C2 5 4.4 2.6 7.5 2.6 C9.2 2.6 10.9 3.4 12 4.7 C13.1 3.4 14.8 2.6 16.5 2.6 C19.6 2.6 22 5 22 8.1 C22 11.9 18.6 15 13.4 19.7 Z" fill="none" stroke="#14161B" stroke-width="2"/></svg>
+          <span id="so-count">0</span>
+        </div>
+        <div id="so-cap"><b>fournil.martin</b> Nouvelle identité, nouveau camion, nouveaux tee-shirts. Merci à notre agence !</div>
+      </div>
+      <div id="so-img" class="clip" data-start="0" data-duration="4">
+        <div id="so-img-logo"><svg viewBox="0 0 400 400" width="100%" height="100%"><circle class="si-ring si-line" cx="200" cy="200" r="180" pathLength="1" fill="#4A2C1A" stroke="#4A2C1A" stroke-width="8"/><path class="si-stem si-line" d="M200 330 L200 120" pathLength="1" fill="none" stroke-linecap="round" stroke="#E8A33D" stroke-width="10"/><ellipse class="si-grain si-line" cx="170" cy="150" rx="20" ry="38" transform="rotate(-32 170 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="si-grain si-line" cx="230" cy="150" rx="20" ry="38" transform="rotate(32 230 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="si-grain si-line" cx="170" cy="200" rx="20" ry="38" transform="rotate(-32 170 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="si-grain si-line" cx="230" cy="200" rx="20" ry="38" transform="rotate(32 230 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="si-grain si-line" cx="170" cy="250" rx="20" ry="38" transform="rotate(-32 170 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="si-grain si-line" cx="230" cy="250" rx="20" ry="38" transform="rotate(32 230 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="si-grain si-line" cx="200" cy="100" rx="20" ry="38" transform="rotate(0 200 100)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/></svg></div>
+        <div id="so-img-name">Fournil Martin</div>
+      </div>
+      <div id="so-b1" class="so-bub clip" data-start="1.5" data-duration="2.5" style="left:140px; top:1470px">Trop beau le camion !</div>
+      <div id="so-b2" class="so-bub clip" data-start="1.8" data-duration="2.2" style="left:200px; top:1570px">Je veux le tee-shirt</div>
+      <div id="so-b3" class="so-bub clip" data-start="2.1" data-duration="1.9" style="left:150px; top:1670px">On passe demain matin</div>
+    </div>
+    <h1 id="so-title" class="title clip" data-layout-allow-occlusion data-start="1.0" data-duration="2.8">Et qui fait<br />parler.</h1>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#so-cam", { scale: 5.195 }, { scale: 1, duration: 0.9, ease: "expo.out" }, 0);
+    tl.fromTo("#so-title", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power3.out" }, 1.0);
+    tl.fromTo("#so-heart", { scale: 1 }, { scale: 1.35, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, 1.2);
+    tl.fromTo("#so-heart-p", { fill: "rgba(255,90,54,0)", stroke: "#14161B" }, { fill: "rgba(255,90,54,1)", stroke: "#FF5A36", duration: 0.12 }, 1.2);
+    const counter = { v: 0 };
+    tl.fromTo(counter, { v: 0 }, { v: 1248, duration: 2.2, ease: "power2.out",
+      onUpdate: () => { document.querySelector("#so-count").textContent = Math.round(counter.v).toLocaleString("fr-FR") + " j'aime"; } }, 1.2);
+    tl.fromTo("#so-b1", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.2)" }, 1.5);
+    tl.fromTo("#so-b2", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.2)" }, 1.8);
+    tl.fromTo("#so-b3", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.2)" }, 2.1);
+    tl.to("#so-title", { opacity: 0, duration: 0.2, ease: "power2.in" }, 3.65);
+    tl.to("#so-cam", { x: -1188.0, duration: 0.35, ease: "power3.in" }, 3.65);
+    window.__timelines["social"] = tl;
+  </script>
+</template>

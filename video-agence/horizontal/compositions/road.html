@@ -1,0 +1,62 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #ro-sky { position: absolute; inset: 0; background: #CFE6F2; }
+    #ro-city { position: absolute; left: 0; top: 501.5px; width: 5760px; height: 380px; }
+    .ro-b { position: absolute; bottom: 0; background: #A9CFE2; }
+    #ro-road { position: absolute; left: 0; top: 881.5px; width: 1920px; height: 198.5px; background: #2E3138; }
+    #ro-walk { position: absolute; left: 0; top: 859.5px; width: 1920px; height: 22px; background: #8E99A6; }
+    #ro-dashes { position: absolute; left: 0; top: 951.5px; width: 5760px; height: 14px;
+      background-image: linear-gradient(90deg, #F2F4F7 0 120px, transparent 120px 220px); background-size: 220px 14px; }
+    #ro-van { position: absolute; left: 670.0px; top: 392.5px; width: 1100px; height: 495.0px; }
+    #ro-van svg.body { position: absolute; inset: 0; }
+    #ro-logo { position: absolute; left: 302.5px; top: 48.94999999999999px; width: 209.0px; height: 209.0px; }
+    #ro-name { position: absolute; left: 107.0px; top: 259.95px; width: 600px; text-align: center;
+      font-family: "Playfair Display"; font-weight: 700; font-size: 37px; color: #4A2C1A; }
+    .ro-wheel { position: absolute; width: 143.0px; height: 143.0px; top: 314.6px; }
+    
+    .title {
+      position: absolute; left: 200px; top: 150px; width: 760px;
+      font-family: "Montserrat"; font-weight: 800; font-size: 96px; line-height: 1.04;
+      letter-spacing: -0.02em; color: #14161B;
+    }
+  </style>
+  <div id="root" data-composition-id="road" data-width="1920" data-height="1080">
+    <div id="ro-sky"></div>
+    <div id="ro-city"><div class="ro-b" style="left:0px; width:220px; height:260px"></div><div class="ro-b" style="left:260px; width:160px; height:340px"></div><div class="ro-b" style="left:460px; width:300px; height:200px"></div><div class="ro-b" style="left:800px; width:180px; height:300px"></div><div class="ro-b" style="left:1020px; width:260px; height:240px"></div><div class="ro-b" style="left:1320px; width:140px; height:360px"></div><div class="ro-b" style="left:1500px; width:240px; height:220px"></div><div class="ro-b" style="left:1780px; width:200px; height:310px"></div><div class="ro-b" style="left:2020px; width:320px; height:180px"></div><div class="ro-b" style="left:2380px; width:170px; height:330px"></div><div class="ro-b" style="left:2590px; width:230px; height:250px"></div><div class="ro-b" style="left:2860px; width:280px; height:210px"></div><div class="ro-b" style="left:3180px; width:150px; height:350px"></div><div class="ro-b" style="left:3370px; width:260px; height:270px"></div><div class="ro-b" style="left:3670px; width:220px; height:260px"></div><div class="ro-b" style="left:3930px; width:160px; height:340px"></div><div class="ro-b" style="left:4130px; width:300px; height:200px"></div><div class="ro-b" style="left:4470px; width:180px; height:300px"></div><div class="ro-b" style="left:4690px; width:260px; height:240px"></div><div class="ro-b" style="left:4990px; width:140px; height:360px"></div><div class="ro-b" style="left:5170px; width:240px; height:220px"></div><div class="ro-b" style="left:5450px; width:200px; height:310px"></div><div class="ro-b" style="left:5690px; width:320px; height:180px"></div></div>
+    <div id="ro-walk"></div>
+    <div id="ro-road"></div>
+    <div id="ro-dashes"></div>
+    <div id="ro-van" class="clip" data-start="0" data-duration="5">
+        <svg class="body" viewBox="0 0 1000 450" width="100%" height="100%">
+          <path d="M30 360 L30 70 Q30 40 60 40 L700 40 L700 360 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="4"/>
+          <path d="M700 360 L700 60 Q700 40 722 40 L815 40 Q835 40 848 56 L950 190 Q968 210 968 240 L968 360 Z" fill="#FFFFFF" stroke="#C9CED6" stroke-width="4"/>
+          <path d="M722 74 L812 74 L900 190 L722 190 Z" fill="#8FBFD6"/>
+          <rect x="705" y="210" width="6" height="140" fill="#D5DAE1"/>
+          <rect x="740" y="215" width="40" height="8" rx="4" fill="#9AA3AE"/>
+          <rect x="20" y="340" width="960" height="34" rx="10" fill="#3A3E47"/>
+          <rect x="940" y="250" width="30" height="26" rx="6" fill="#F6C44F"/>
+          <rect x="30" y="250" width="16" height="30" fill="#FF5A36"/>
+        </svg>
+        <div class="ro-wheel" style="left:148.5px"><svg viewBox="0 0 100 100" width="100%" height="100%"><circle cx="50" cy="50" r="48" fill="#1B1D22"/><circle cx="50" cy="50" r="28" fill="#C9CED6"/><g class="ro-spokes" style="transform-origin:50px 50px"><rect x="47" y="24" width="6" height="52" fill="#7D8590"/><rect x="24" y="47" width="52" height="6" fill="#7D8590"/></g><circle cx="50" cy="50" r="7" fill="#7D8590"/></svg></div>
+        <div class="ro-wheel" style="left:808.5px"><svg viewBox="0 0 100 100" width="100%" height="100%"><circle cx="50" cy="50" r="48" fill="#1B1D22"/><circle cx="50" cy="50" r="28" fill="#C9CED6"/><g class="ro-spokes" style="transform-origin:50px 50px"><rect x="47" y="24" width="6" height="52" fill="#7D8590"/><rect x="24" y="47" width="52" height="6" fill="#7D8590"/></g><circle cx="50" cy="50" r="7" fill="#7D8590"/></svg></div>
+        <div id="ro-name">Fournil Martin</div>
+        <div id="ro-logo"><svg viewBox="0 0 400 400" width="100%" height="100%"><circle class="rl-ring rl-line" cx="200" cy="200" r="180" pathLength="1" fill="#4A2C1A" stroke="#4A2C1A" stroke-width="8"/><path class="rl-stem rl-line" d="M200 330 L200 120" pathLength="1" fill="none" stroke-linecap="round" stroke="#E8A33D" stroke-width="10"/><ellipse class="rl-grain rl-line" cx="170" cy="150" rx="20" ry="38" transform="rotate(-32 170 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="rl-grain rl-line" cx="230" cy="150" rx="20" ry="38" transform="rotate(32 230 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="rl-grain rl-line" cx="170" cy="200" rx="20" ry="38" transform="rotate(-32 170 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="rl-grain rl-line" cx="230" cy="200" rx="20" ry="38" transform="rotate(32 230 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="rl-grain rl-line" cx="170" cy="250" rx="20" ry="38" transform="rotate(-32 170 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="rl-grain rl-line" cx="230" cy="250" rx="20" ry="38" transform="rotate(32 230 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="rl-grain rl-line" cx="200" cy="100" rx="20" ry="38" transform="rotate(0 200 100)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/></svg></div>
+    </div>
+    <h1 id="ro-title" class="title clip" data-start="1.2" data-duration="3.2">Qui prend<br />la route.</h1>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ro-logo", { x: 163.0, y: 14.0, scale: 2.488 }, { x: 0, y: 0, scale: 1, duration: 0.9, ease: "power3.inOut" }, 0.25);
+    tl.fromTo("#ro-logo", { scaleX: 1 }, { scaleX: 1.12, scaleY: 0.9, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, 1.15);
+    tl.fromTo("#ro-name", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.4, ease: "power2.out" }, 1.25);
+    tl.fromTo("#ro-title", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power3.out" }, 1.2);
+    tl.fromTo("#ro-dashes", { x: 0 }, { x: -2200, duration: 3.6, ease: "power1.in" }, 1.4);
+    tl.fromTo("#ro-city", { x: 0 }, { x: -700, duration: 3.6, ease: "power1.in" }, 1.4);
+    tl.fromTo(".ro-spokes", { rotation: 0 }, { rotation: 1440, duration: 3.6, ease: "power1.in" }, 1.4);
+    tl.fromTo("#ro-van", { y: 0 }, { y: -4, duration: 0.18, yoyo: true, repeat: 9, ease: "sine.inOut" }, 1.5);
+    tl.to("#ro-title", { x: -60, opacity: 0, duration: 0.3, ease: "power2.in" }, 4.1);
+    tl.to("#ro-van", { x: 3020, duration: 0.8, ease: "power3.in" }, 4.15);
+    window.__timelines["road"] = tl;
+  </script>
+</template>

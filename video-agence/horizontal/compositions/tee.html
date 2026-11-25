@@ -1,0 +1,52 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #te-bg { position: absolute; inset: 0; background: #F3D9A4; }
+    #te-cam { position: absolute; inset: 0; transform-origin: 1260.0px 573.125px; }
+    #te-shirt { position: absolute; left: 856.875px; top: 170.0px; width: 806.25px; height: 860px; transform-origin: 50% 0%; }
+    #te-logo { position: absolute; left: 258.0px; top: 258.0px; width: 290.25px; height: 290.25px; }
+    #te-name { position: absolute; left: 103.125px; top: 556.25px; width: 600px; text-align: center;
+      font-family: "Playfair Display"; font-weight: 700; font-size: 55px; color: #E8A33D; }
+    #te-print { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    #te-squeegee { position: absolute; left: 198.0px; top: 228.0px; width: 410.25px; height: 26px;
+      background: #2E3138; border-bottom: 8px solid #C9CED6; }
+    
+    .title {
+      position: absolute; left: 200px; top: 150px; width: 760px;
+      font-family: "Montserrat"; font-weight: 800; font-size: 96px; line-height: 1.04;
+      letter-spacing: -0.02em; color: #4A2C1A;
+    }
+  </style>
+  <div id="root" data-composition-id="tee" data-width="1920" data-height="1080">
+    <div id="te-bg"></div>
+    <div id="te-cam">
+      <div id="te-shirt" class="clip" data-start="0" data-duration="4">
+        <svg viewBox="0 0 600 640" width="100%" height="100%">
+          <path d="M190 40 Q300 110 410 40 L580 130 L520 260 L455 230 L455 630 L145 630 L145 230 L80 260 L20 130 Z" fill="#4A2C1A"/>
+          <path d="M190 40 Q300 110 410 40 L392 34 Q300 86 208 34 Z" fill="#3A2214"/>
+          <path d="M145 230 L145 630" stroke="#3A2214" stroke-width="6"/>
+          <path d="M455 230 L455 630" stroke="#3A2214" stroke-width="6"/>
+        </svg>
+        <div id="te-print">
+          <div id="te-logo"><svg viewBox="0 0 400 400" width="100%" height="100%"><circle class="tl-ring tl-line" cx="200" cy="200" r="180" pathLength="1" fill="none" stroke="#E8A33D" stroke-width="12"/><path class="tl-stem tl-line" d="M200 330 L200 120" pathLength="1" fill="none" stroke-linecap="round" stroke="#E8A33D" stroke-width="10"/><ellipse class="tl-grain tl-line" cx="170" cy="150" rx="20" ry="38" transform="rotate(-32 170 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="tl-grain tl-line" cx="230" cy="150" rx="20" ry="38" transform="rotate(32 230 150)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="tl-grain tl-line" cx="170" cy="200" rx="20" ry="38" transform="rotate(-32 170 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="tl-grain tl-line" cx="230" cy="200" rx="20" ry="38" transform="rotate(32 230 200)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="tl-grain tl-line" cx="170" cy="250" rx="20" ry="38" transform="rotate(-32 170 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="tl-grain tl-line" cx="230" cy="250" rx="20" ry="38" transform="rotate(32 230 250)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/><ellipse class="tl-grain tl-line" cx="200" cy="100" rx="20" ry="38" transform="rotate(0 200 100)" pathLength="1" fill="#E8A33D" stroke="#E8A33D" stroke-width="4"/></svg></div>
+          <div id="te-name">Fournil Martin</div>
+        </div>
+        <div id="te-squeegee"></div>
+      </div>
+    </div>
+    <h1 id="te-title" class="title clip" data-start="1.6" data-duration="2.1">Qui se porte<br />fièrement.</h1>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#te-shirt", { y: -1080 }, { y: 0, duration: 0.55, ease: "power3.out" }, 0);
+    tl.fromTo("#te-shirt", { rotation: 6 }, { rotation: 0, duration: 1.1, ease: "elastic.out(1, 0.5)" }, 0.35);
+    tl.fromTo("#te-squeegee", { y: 0, opacity: 0 }, { y: 0, opacity: 1, duration: 0.15 }, 0.75);
+    tl.fromTo("#te-squeegee", { y: 0 }, { y: 452, duration: 0.8, ease: "power2.inOut", immediateRender: false }, 0.9);
+    tl.fromTo("#te-print", { clipPath: "inset(0 0 100% 0)" }, { clipPath: "inset(0 0 0% 0)", duration: 0.8, ease: "power2.inOut" }, 0.9);
+    tl.to("#te-squeegee", { opacity: 0, duration: 0.2 }, 1.75);
+    tl.fromTo("#te-title", { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power3.out" }, 1.6);
+    tl.to("#te-title", { x: -60, opacity: 0, duration: 0.25, ease: "power2.in" }, 3.4);
+    tl.fromTo("#te-cam", { scale: 1 }, { scale: 3.2, duration: 0.6, ease: "expo.in" }, 3.4);
+    window.__timelines["tee"] = tl;
+  </script>
+</template>
