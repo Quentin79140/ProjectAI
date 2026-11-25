@@ -1,0 +1,39 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #0e0f13; overflow: hidden; }
+    #intro-bar {
+      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      background: var(--brand, #ff5a36); transform-origin: left center;
+    }
+    #intro-kicker {
+      position: absolute; left: 240px; top: 380px; color: #ff5a36;
+      font-family: "Montserrat"; font-weight: 700; font-size: 36px;
+      letter-spacing: 0.3em; text-transform: uppercase;
+    }
+    #intro-title {
+      position: absolute; left: 232px; top: 440px; color: #f4f1ea;
+      font-family: "Montserrat"; font-weight: 900; font-size: 168px;
+      line-height: 1; letter-spacing: -0.04em;
+    }
+    #intro-line {
+      position: absolute; left: 240px; top: 810px; width: 420px; height: 10px;
+      background: #ff5a36; transform-origin: left center;
+    }
+  </style>
+  <div id="root" data-composition-id="intro" data-width="1920" data-height="1080">
+        <p id="intro-kicker" class="clip" data-start="0" data-duration="4" data-var-text="kicker">Agence de communication</p>
+    <h1 id="intro-title" class="clip" data-start="0" data-duration="4" data-var-text="headline">Votre marque<br />en mouvement.</h1>
+    <div id="intro-bar" class="clip" data-start="0" data-duration="1"></div>
+    <div id="intro-line" class="clip" data-start="1.2" data-duration="2.8"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#intro-bar", { scaleX: 0.11 }, { scaleX: 0, duration: 0.6, ease: "expo.inOut" }, 0.1);
+    tl.fromTo("#intro-kicker", { opacity: 1, x: 0 }, { opacity: 1, x: 0, duration: 0.01 }, 0);
+    tl.fromTo("#intro-title", { opacity: 1, y: 0 }, { opacity: 1, y: 0, duration: 0.01 }, 0);
+    tl.fromTo("#intro-line", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power3.inOut" }, 1.2);
+    tl.fromTo("#intro-title", { scale: 1 }, { scale: 1.04, duration: 3.2, ease: "none" }, 0.2);
+    tl.to(["#intro-kicker", "#intro-title", "#intro-line"], { opacity: 0, y: -30, duration: 0.35, ease: "power2.in", stagger: 0.04 }, 3.5);
+    window.__timelines["intro"] = tl;
+  </script>
+</template>

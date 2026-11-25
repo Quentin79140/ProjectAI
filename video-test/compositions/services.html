@@ -1,0 +1,34 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #0e0f13; overflow: hidden; }
+    .svc {
+      position: absolute; left: 240px; width: 1440px; color: #f4f1ea;
+      font-family: "Montserrat"; font-weight: 800; font-size: 96px; letter-spacing: -0.03em;
+    }
+    .svc span { color: #ff5a36; font-weight: 700; font-size: 40px; margin-right: 36px; vertical-align: middle; }
+    #svc-1 { top: 250px; }
+    #svc-2 { top: 400px; }
+    #svc-3 { top: 550px; }
+    #svc-4 { top: 700px; }
+    #svc-wipe {
+      position: absolute; left: 0; top: 0; width: 1920px; height: 1080px;
+      background: #ff5a36; transform-origin: right center;
+    }
+  </style>
+  <div id="root" data-composition-id="services" data-width="1920" data-height="1080">
+    <div id="svc-1" class="svc clip" data-start="0.2" data-duration="3.8"><span>01</span>Graphisme</div>
+    <div id="svc-2" class="svc clip" data-start="0.4" data-duration="3.6"><span>02</span>Marquage véhicule</div>
+    <div id="svc-3" class="svc clip" data-start="0.6" data-duration="3.4"><span>03</span>Textile imprimé</div>
+    <div id="svc-4" class="svc clip" data-start="0.8" data-duration="3.2"><span>04</span>Digital</div>
+    <div id="svc-wipe" class="clip" data-start="3.2" data-duration="0.8"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    ["#svc-1", "#svc-2", "#svc-3", "#svc-4"].forEach((id, i) => {
+      tl.fromTo(id, { opacity: 0, x: 80 }, { opacity: 1, x: 0, duration: 0.55, ease: "power4.out" }, 0.2 + i * 0.2);
+    });
+    tl.fromTo(".svc", { x: 0 }, { x: -24, duration: 2, ease: "none" }, 1.2);
+    tl.fromTo("#svc-wipe", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "expo.inOut" }, 3.2);
+    window.__timelines["services"] = tl;
+  </script>
+</template>
